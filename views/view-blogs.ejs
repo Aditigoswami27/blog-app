@@ -1,0 +1,54 @@
+<%- include("partials/header.ejs") %>
+<style>
+    .topnav {
+background-color: #333;
+overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+float: left;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+background-color:#eeccff;
+color: black;
+}
+
+/* Create a right-aligned (split) link inside the navigation bar */
+.topnav a.split {
+float: right;
+background-color:#eeccff ;
+color:black;
+}
+
+</style>
+<div class="container">
+    <% if (blogPosts && blogPosts.length > 0) { %>
+        <h1>All Blog Posts</h1>
+    <ol>
+        <% blogPosts.forEach(post => { %>
+            <li>
+                <h2><%= post.title %></h2>
+                <hr>
+                <p><%= post.content %></p>
+                <br><br>
+                <div class="topnav">
+                    <a href="/edit-post/<%= post.id %>">Edit post</a>
+                    <a href="/delete-post/<%= post.id %>" class="split">Delete post</a>
+                </div>
+            </li>
+        <% }); %>
+    </ol>
+    <% } else { %>
+        <h1>No posts yet. Go back and create one!</h1>
+    <% } %>
+</div>
+
+<%- include("partials/footer.ejs") %>

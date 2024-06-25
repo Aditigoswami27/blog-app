@@ -1,0 +1,32 @@
+<%- include("partials/header.ejs") %>
+<style>
+    .greetbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-bottom:0;
+}  
+
+button{
+  height: 40px;
+  width: 170px;
+  border-radius:12px;
+  background-color: #733791;
+  border-color: #733791 ;
+  color: white;
+  font-size: medium;
+  font-weight: bold;
+}
+</style>
+<body style="background-color: rgb(237, 223, 253);">
+    <div class="greetbox">
+        <div><h1>Mould your creative ideas & experiences.</h1></div>
+        <div><h3>A place to unleash your creative & innovative ideas , open-up about your 
+            life-experiences <br> either good or bad ,they are worth sharing just like your chocolate to your bestfriend. Go for it !</h3></div>
+        <div><button onclick="window.location.href='/create-blog'"> Create blog</button></div>
+    </div>
+</body>
+<%- include("partials/footer.ejs") %>
+    
